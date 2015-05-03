@@ -95,6 +95,7 @@ public class MainActivity extends ActionBarActivity {
                                         }
                                         turn = 1;
                                         selected_row = seleted_col = -1;
+
                                         performMove();
 
                                     }
@@ -189,14 +190,14 @@ public class MainActivity extends ActionBarActivity {
                 /*if(turn == 1)
 					return eval_value;*/
 
-                if(win) {
+                /*if(win) {
                     double prob = Math.random();
                     if (prob > 0.5) {
                         eval_value += 5;
                     } else {
                         eval_value -= 5;
                     }
-                }
+                }*/
                 if(just_count) {
                     if (current[i][j] == 1 || current[i][j] == 3) {
                         temp_row = i + 1;
@@ -580,7 +581,7 @@ public class MainActivity extends ActionBarActivity {
     public void performMove()
     {
         if (!GenerateMoves(turn, CheckersBoard).isEmpty()) {
-            int[] move = minimax(CheckersBoard, 4, turn);
+            int[] move = minimax(CheckersBoard, 5, turn);
             //   count++;
             System.out.println();
             System.out.println("Turn: " + turn);
